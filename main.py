@@ -3,13 +3,12 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
 
-model = load_model("model.h5")
-
+model = load_model("model.keras")
 st.title("MNIST Digit Classifier")
-uploaded_file = st.file_uploader("Upload a digit image", type=["png", "jpg"])
 
+uploaded_file = st.file_uploader("Upload a digit image", type=["png", "jpg"])
 if uploaded_file:
     image = Image.open(uploaded_file).convert("L").resize((28, 28))
-    img_array = np.array(image).reshape(1, 28, 28, 1) / 255.0
+    img_array = np.array(image).reshape(1, 28, 28) / 255.0
     prediction = model.predict(img_array)
     st.write(f"Predicted digit: {np.argmax(prediction)}")
