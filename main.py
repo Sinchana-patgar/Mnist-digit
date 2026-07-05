@@ -3,7 +3,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
 
-model = load_model("model_new.h5")
+model = load_model("model_cnn.h5")
 st.title("MNIST Digit Classifier")
 
 uploaded_file = st.file_uploader("Upload a digit image", type=["png", "jpg"])
