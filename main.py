@@ -27,4 +27,4 @@ if uploaded_file:
         st.warning("Low confidence — this may not be a clear handwritten digit.")
 else:
     st.info("Please upload an image of a handwritten digit (0–9) to get a prediction.")
-st.caption("📌 Please upload an image containing a single handwritten digit (0–9), centered and isolated — not text, sentences, or multiple characters.")
+st.caption("Note:Please upload an image containing a single handwritten digit (0–9), centered and isolated — not text, sentences, or multiple characters.")
