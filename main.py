@@ -18,3 +18,5 @@ if uploaded_file:
 
     prediction = model.predict(img_array)
     st.write(f"Predicted digit: {np.argmax(prediction)}")
+    if confidence < 50:
+        st.warning("Low confidence — this may not be a clear handwritten digit.")
